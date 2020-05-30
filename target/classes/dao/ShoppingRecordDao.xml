@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.ShoppingRecordDao">
+    <resultMap id="sMRD" type="entity.ShoppingRecord">
+        <id column="user_id" property="userId"/>
+        <id column="product_id" property="productId"/>
+        <id column="time" property="time"/>
+        <result column="order_status" property="orderStatus"/>
+        <result column="product_price" property="productPrice"/>
+        <result column="counts" property="counts"/>
+        <result column="shangjiaId" property="shangjiaId"/>
+    </resultMap>
+
+<!--    得到具体的订单记录-->
+    <select id="getShoppingRecord" resultMap="sMRD">
+        select * from shopping_record where user_id=#{userId} and product_id=#{productId} and time=#{time}
+    </select>
+
+<!--    添加订单记录-->
+    <insert id="addShoppingRecord" parameterType="entity.ShoppingRecord">
+        insert into shopping_record (user_id,product_id,time,order_status,product_price,counts,shangjiaId) values (#{userId},#{productId},#{time},#{orderStatus},#{productPrice},#{counts},#{shangjiaId})
+    </insert>
+
+<!--    删除某个客户关于某个商品的订单记录-->
+    <delete id="deleteShoppingRecord" >
+        delete from shopping_record where user_id=#{userId} and product_id=#{productId}
+    </delete>
+
+<!--    更新订单记录-->
+    <update id="updateShoppingRecord" parameterType="entity.ShoppingRecord">
+        update shopping_record set order_status=#{orderStatus},product_price=#{productPrice},counts=#{counts}
+         where user_id=#{userId} and product_id=#{productId} and time=#{time}
+    </update>
+
+<!--    获取某个客户的所有订单-->
+    <select id="getShoppingRecords" resultMap="sMRD" parameterType="Integer">
+        select * from shopping_record where user_id=#{userId}
+    </select>
+
+<!--    获取某个商家的所有订单-->
+    <select id="getAllShoppingRecords" resultMap="sMRD" parameterType="Integer">
+        select * from shopping_record where shangjiaId=#{productId}
+    </select>
+
+<!--    根据处理情况获取订单-->
+    <select id="getShoppingRecordsByOrderStatus" parameterType="Integer" resultMap="sMRD">
+        select * from shopping_record where order_status = #{orderStatus}
+    </select>
+
+<!--    根据客户和商品id获取订单信息-->
+    <select id="getUserProductRecord" resultMap="sMRD">
+        select * from shopping_record where user_id=#{user_id} and product_id=#{productId}
+    </select>
+
+<!--    根据用户id删除订单信息-->
+    <delete id="deleteShoppingRecordByUser" parameterType="Integer">
+        delete from shopping_record where user_id=#{userId}
+    </delete>
+
+
+    <delete id="deleteShoppingRecordByProductId">
+        delete  from shopping_record where product_id=#{productId}
+    </delete>
+
+    <select id="getShoppingRecordByProductId" resultMap="sMRD">
+        select * from shopping_record where product_id=#{productId}
+    </select>
+
+</mapper>

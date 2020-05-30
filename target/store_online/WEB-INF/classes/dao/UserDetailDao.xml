@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.UserDetailDao">
+
+    <resultMap id="userDetail" type="entity.UserDetail">
+        <id column="id" property="id"/>
+        <result column="password" property="password"/>
+        <result column="phone_number" property="phoneNumber"/>
+        <result column="sex" property="sex"/>
+        <result column="birthday" property="birthday"/>
+        <result column="post_number" property="postNumber"/>
+        <result column="address" property="address"/>
+        <result column="register_time" property="registerTime"/>
+    </resultMap>
+
+    <!--    根据id查询-->
+    <select id="getUserDetail" resultMap="userDetail">
+        select * from user_detail where id= #{id}
+    </select>
+
+    <!--    插入数据-->
+    <insert id="addUserDetail" parameterType="entity.UserDetail">
+        insert into user_detail (id,password,phone_number,sex,birthday,post_number,address,register_time) values (#{id},#{password},#{phoneNumber},#{sex},#{birthday},#{postNumber},#{address},#{registerTime})
+    </insert>
+
+    <!--    据用户id删除数据-->
+    <delete id="deleteUserDetail" parameterType="Integer">
+        delete from user_detail where id=#{id}
+    </delete>
+
+    <!--    更新某一个id的数据-->
+    <update id="updateUserDetail" parameterType="entity.UserDetail">
+        update user_detail set password=#{password},phone_number=#{phoneNumber},sex=#{sex},birthday=#{birthday},post_number=#{postNumber},address=#{address},register_time=#{registerTime} where id=#{id}
+    </update>
+
+    <!--    查询所有数据-->
+    <select id="getAllUserDetail" resultMap="userDetail">
+        select * from user_detail
+    </select>
+
+</mapper>

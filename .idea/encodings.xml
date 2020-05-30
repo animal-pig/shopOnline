@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/controller/ProductController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/controller/ShoppingCarController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/controller/ShoppingRecordController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/controller/UserController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/dao/ProductDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/reply/Response.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/service/ProductService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/service/ProductServiceImplement.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/service/Response.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/service/ShoppingCarService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/service/ShoppingCarServiceImplement.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/service/ShoppingRecordService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/service/ShoppingRecordServiceImplement.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/service/UserDetailService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/service/UserDetailServiceImplement.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/service/UserService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/service/UserServiceImplement.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/jdbcConfig.properties" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/log4j.properties" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static" charset="GBK" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

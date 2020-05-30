@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.ShoppingCarDao">
+<!--    shoppingCarDaoMap  简称sCDM-->
+    <resultMap id="sCDM" type="entity.ShoppingCar">
+        <id column="user_id" property="userId"/>
+        <id column="product_id" property="productId"/>
+        <result column="product_price" property="productPrice"/>
+        <result column="counts" property="counts"/>
+    </resultMap>
+
+<!--    查询特定客户的购物车信息-->
+    <select id="getShoppingCar" resultMap="sCDM">
+        select * from shopping_car where user_id =  #{userId} and product_id = #{productId}
+    </select>
+
+<!--    加入购物车-->
+    <insert id="addShoppingCar" parameterType="entity.ShoppingCar">
+        insert into shopping_car (user_id,product_id,product_price,counts) values (#{userId},#{productId},#{productPrice},#{counts})
+    </insert>
+
+<!--    删除购物车记录-->
+    <delete id="deleteShoppingCar" >
+        delete from shopping_car where user_Id = #{userId} and product_id=#{productId}
+    </delete>
+
+<!--    更新数据-->
+    <update id="updateShoppingCar" parameterType="entity.ShoppingCar">
+        update shopping_car set product_price=#{productPrice},counts=#{counts} where user_Id = #{userId} and product_id=#{productId}
+    </update>
+
+<!--    根据userId查询-->
+    <select id="getShoppingCars" parameterType="Integer" resultMap="sCDM">
+        select * from shopping_car where user_Id = #{userId}
+    </select>
+
+    <delete id="deleteShoppingCarByUser" parameterType="Integer">
+        delete from shopping_car where user_Id = #{userId}
+    </delete>
+
+    <delete id="deleteShoppingCarByProduct" parameterType="Integer">
+        delete from shopping_car where product_id=#{productId}
+    </delete>
+
+
+
+</mapper>
