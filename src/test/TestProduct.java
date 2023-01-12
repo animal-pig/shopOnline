@@ -179,6 +179,6 @@
 ////        shoppingRecordList=shoppingRecordDao.getAllShoppingRecords();
 ////        根据处理情况获取信息
 ////        shoppingRecordList = shoppingRecordDao.getShoppingRecordsByOrderStatus(1);
-//
+//          <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //    }
 //}
